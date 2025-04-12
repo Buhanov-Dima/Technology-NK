@@ -1,0 +1,11 @@
+# WordPress core (если работаешь только с темой)
+wp-admin/
+wp-includes/
+*.log
+*.zip
+*.sql
+*.tar.gz
+.vscode/
+node_modules/
+.env
+.DS_Store
