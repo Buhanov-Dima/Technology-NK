@@ -13,7 +13,7 @@
 <body <?php body_class(); ?>>
 
 <header class="header fixed-top">
-  
+
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo">
         <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -38,12 +38,9 @@
         ?>
       </nav>
 
-      <a class="nav-link d-none d-lg-block" href="tel:+7342555555">+7(342)-55-55-515</a>
+      <a class="nav-link d-none d-lg-block" href="tel:+79299011125">+7(929)-901-11-25</a>
 
       <div class="mobile-menu d-lg-none" id="mobile-menu">
-        <div class="mobile-menu-header d-flex justify-content-end mb-4">
-          <button class="close-mobile-menu" id="close-menu">✕</button>
-        </div>
         <div class="mobile-menu-inner">
           <?php
           wp_nav_menu(array(
@@ -53,9 +50,10 @@
             'walker' => new WP_Bootstrap_Navwalker(),
           ));
           ?>
-          <a class="nav-link mobile-phone" href="tel:+7342555555">+7(342)-55-55-515</a>
+          <a class="nav-link mobile-phone" href="tel:+79299011125">+7(929)-901-11-25</a>
         </div>
       </div>
+      <div class="menu-overlay d-lg-none" id="menu-overlay"></div>
     </div>
 
   </header>

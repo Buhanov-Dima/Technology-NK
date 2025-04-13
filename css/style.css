@@ -55,9 +55,9 @@ main {
   padding: 10px 0;
 }
 
-.has-submenu {
+/* .has-submenu {
   position: relative;
-}
+} */
 
 .has-submenu:hover>.dropdown-menu-sub {
   display: block;
@@ -216,9 +216,9 @@ body {
 }
 
 
-.nav ul li {
+/* .nav ul li {
   position: relative;
-}
+} */
 
 .nav ul li a {
   color: #000000;
@@ -690,103 +690,6 @@ input#toggle {
   margin-right: 15px;
 }
 
-/*=============== Mobile Menu ===============*/
-.burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  cursor: pointer;
-  z-index: 1101;
-}
-
-.burger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: #333;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  max-width: 320px;
-  height: 100%;
-  background: #fff;
-  z-index: 9999;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  padding: 60px 20px;
-  overflow-y: auto;
-  display: none;
-  right: auto;
-}
-
-.mobile-menu.open {
-  transform: translateX(0);
-  display: block;
-}
-
-.mobile-menu .mobile-menu-header {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 10001;
-  padding-bottom: 10px;
-}
-
-.close-mobile-menu {
-  background: transparent;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-  line-height: 1;
-  padding: 5px 10px;
-}
-
-.mobile-menu .mobile-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.mobile-menu .nav-link {
-  font-size: 18px;
-  color: #333;
-  text-decoration: none;
-}
-
-.mobile-menu-header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 10001;
-  border-bottom: 1px solid #ddd;
-}
-
-.close-mobile-menu {
-  display: inline-block;
-  background: none;
-  border: none;
-  font-size: 28px;
-  line-height: 1;
-  padding: 5px 10px;
-  cursor: pointer;
-  color: #333;
-  z-index: 10002;
-}
-/*=============== Mobile Menu ===============*/
-
 /*=============== Menu ===============*/
 /* === Submenu hover effect (desktop) === */
 .nav ul li:hover>.dropdown-menu-sub {
@@ -806,7 +709,16 @@ input#toggle {
 /*=============== Menu ===============*/
 
 
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+
+  .footer-menu {
+    flex-direction: column;
+  }
+
+  .blocks_wrap{
+    flex-direction: column;
+  }
+}
 
 
 @media (max-width: 767.98px) {}
@@ -814,52 +726,242 @@ input#toggle {
 
 @media (max-width: 991.98px) {
   .block-info h3 {
-    font-size: 22px;
-    margin: 0 0 35px 0;
-  }
+      font-size: 22px;
+      margin: 0 0 35px 0;
+    }
+  
+    /*=============== Mobile Menu ===============*/
+    .burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 30px;
+      height: 24px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+  
+    .burger span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: #333;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      border-radius: 2px;
+    }
+  
+    /* Анимация в крестик */
+    .burger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+  
+    .burger.active span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .burger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  
+    .mobile-menu {
+      position: absolute;
+      top: calc(100% + 25px);
+      right: 0;
+      width: 70%;
+      max-width: 80%;
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 9999;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.8); /* полупрозрачный белый */
+      backdrop-filter: blur(12px);          /* сам блюр */
+      -webkit-backdrop-filter: blur(12px);  /* для Safari */
+      border-radius: 10px 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
 
-  .mobile-nav .menu-item-has-children>a::after {
-    content: "▾";
-    float: right;
-    margin-left: 10px;
-  }
+    .mobile-nav .menu-item-has-children.active > .dropdown-menu{
+      background-color: transparent;
+    }
+  
+    .mobile-menu.open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  
+  
+    .mobile-menu .mobile-menu-header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10001;
+      padding-bottom: 10px;
+    }
+  
+    .close-mobile-menu {
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 5px 10px;
+    }
+  
+    .mobile-menu .mobile-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .mobile-menu .nav-link {
+      font-size: 18px;
+      color: #333;
+      text-decoration: none;
+    }
+  
+    .mobile-menu-header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10001;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .close-mobile-menu {
+      display: inline-block;
+      background: none;
+      border: none;
+      font-size: 28px;
+      line-height: 1;
+      padding: 5px 10px;
+      cursor: pointer;
+      color: #333;
+      z-index: 10002;
+    }
 
-  .mobile-nav .menu-item-has-children.active>.sub-menu {
-    display: block;
-  }
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 9998;
+    }
+  
+    .mobile-menu.open ~ .menu-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    body.no-scroll {
+      overflow: hidden;
+      touch-action: none; /* для iOS */
+    }
+    
+    /*=============== Mobile Menu ===============*/
+  
+    .mobile-menu-inner {
+      padding: 15px 20px;
+    }
+  
+    .mobile-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .mobile-nav li {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .mobile-nav li > a {
+      display: block;
+      color: #333;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(237, 177, 23, 1.00);
+    }
+  
+    .mobile-phone {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+    }
+  
+    /* Подменю по умолчанию скрыты */
+    /* .mobile-nav .sub-menu */
+    .mobile-nav .dropdown-menu,
+    .mobile-nav .dropdown-menu-sub {
+      /* display: none;
+        padding-left: 15px; */
+  
+      display: none;
+      position: static;
+      /* убираем абсолют */
+      padding-left: 15px;
+      margin-top: 8px;
+    }
+  
+    .mobile-nav .menu-item-has-children.active>.dropdown-menu,
+    .mobile-nav .menu-item-has-children.active>.dropdown-menu-sub,
+    .mobile-nav .menu-item-has-children.active>.sub-menu {
+      display: block;
+    }
+  
+    .has-submenu .dropdown-menu {
+      border: none;
+    }
+  
+    .dropdown-menu-sub {
+      visibility: visible;
+      opacity: 1;
+    }
 
-  .mobile-nav li {
-    display: block;
-  }
-
-  .mobile-nav li>a {
-    display: block;
-    padding: 10px 0;
-  }
-
-  .mobile-nav .dropdown-menu,
-  .mobile-nav .dropdown-menu-sub {
-    display: none;
-  }
-
-  .mobile-nav .menu-item-has-children.active>.dropdown-menu,
-  .mobile-nav .menu-item-has-children.active>.dropdown-menu-sub {
-    display: block;
-  }
-
-
-  .mobile-nav .dropdown-menu,
-  .mobile-nav .dropdown-menu-sub {
-    display: none;
-    padding-left: 15px;
-    position: static;
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-  }
+    .has-submenu .dropdown-menu-sub{
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+    }
+  
+  
+    /* .mobile-nav .dropdown-menu-sub a {
+      background: yellow;
+      color: red;
+      font-size: 18px;
+      display: block;
+      border: 1px solid black;
+    } */
+  
 }
 
 @media (max-width: 1199.98px) {}
 
 @media (max-width: 1399.98px) {}
+
+
+/*============== Desktop menu доработка ====================*/
+@media (min-width: 992px) {
+ 
+}
+
+/*============== Desktop menu доработка ====================*/

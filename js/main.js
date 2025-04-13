@@ -65,79 +65,18 @@ $(document).ready(function () {
 	
 });
 
-/*
-document.addEventListener('DOMContentLoaded', function () {
-	
-	if (window.innerWidth < 992) {
-	 
-	}
 
-   	const burger = document.getElementById('burger');
-	  const mobileMenu = document.getElementById('mobile-menu');
-
-	  burger.addEventListener('click', () => {
-		mobileMenu.classList.toggle('open');
-		burger.classList.toggle('active');
-	  });
-
-	  // Поддержка подменю на мобилке — dropdown-menu и dropdown-menu-sub
-	  const submenuParents = document.querySelectorAll('.mobile-nav .menu-item-has-children > a');
-	  submenuParents.forEach(link => {
-		link.addEventListener('click', function (e) {
-		  const parent = this.parentElement;
-		  const submenu = parent.querySelector('.dropdown-menu, .dropdown-menu-sub');
-		  if (submenu) {
-			e.preventDefault();
-			parent.classList.toggle('active');
-		  }
-		});
-	  });
-
-  // Клик на первый уровень меню (десктоп)
-  const desktopParents = document.querySelectorAll('.nav li.dropdown.has-submenu > a');
-  desktopParents.forEach(link => {
-    link.addEventListener('click', function (e) {
-      const parent = this.parentElement;
-      if (window.innerWidth >= 992) {
-        e.preventDefault();
-        document.querySelectorAll('.nav li.dropdown.has-submenu').forEach(item => {
-          if (item !== parent) item.classList.remove('clicked');
-        });
-        parent.classList.toggle('clicked');
-
-        // Ensure .show class behaves correctly
-        const dropdown = parent.querySelector('.dropdown-menu');
-        if (dropdown) {
-          dropdown.classList.toggle('show');
-        }
-      }
-    });
+if (window.innerWidth < 992) {
+  // Удалить data-bs-toggle у ссылок
+  document.querySelectorAll('.mobile-nav .dropdown-toggle').forEach(el => {
+    el.removeAttribute('data-bs-toggle');
   });
-});*/
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   const burger = document.getElementById('burger');
-//   const mobileMenu = document.getElementById('mobile-menu');
-
-//   if (window.innerWidth < 992) {
-//     burger.addEventListener('click', () => {
-//       mobileMenu.classList.toggle('open');
-//       burger.classList.toggle('active');
-//     });
-
-//     const submenuParents = document.querySelectorAll('.mobile-nav .menu-item-has-children > a');
-//     submenuParents.forEach(link => {
-//       link.addEventListener('click', function (e) {
-//         const parent = this.parentElement;
-//         const submenu = parent.querySelector('.dropdown-menu, .dropdown-menu-sub');
-//         if (submenu) {
-//           e.preventDefault();
-//           parent.classList.toggle('active');
-//         }
-//       });
-//     });
-//   }
-// });
+  // Удалить все style у вложенных подменю
+  document.querySelectorAll('.mobile-nav .dropdown-menu-sub').forEach(el => {
+    el.removeAttribute('style');
+  });
+}
 
 
 // document.addEventListener('DOMContentLoaded', function () {
@@ -146,6 +85,16 @@ document.addEventListener('DOMContentLoaded', function () {
 //   const closeBtn = document.getElementById('close-menu');
 
 //   if (window.innerWidth < 992) {
+//     // Удалить data-bs-toggle у ссылок
+//     document.querySelectorAll('.mobile-nav .dropdown-toggle').forEach(el => {
+//       el.removeAttribute('data-bs-toggle');
+//     });
+
+//     // Удалить все style у вложенных подменю
+//     document.querySelectorAll('.mobile-nav .dropdown-menu-sub').forEach(el => {
+//       el.removeAttribute('style');
+//     });
+
 //     burger?.addEventListener('click', () => {
 //       mobileMenu.classList.toggle('open');
 //       burger.classList.toggle('active');
@@ -167,39 +116,14 @@ document.addEventListener('DOMContentLoaded', function () {
 //         }
 //       });
 //     });
-//   }
-// });
 
+//     const overlay = document.getElementById('menu-overlay');
 
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const burger = document.getElementById('burger');
-//   const mobileMenu = document.getElementById('mobile-menu');
-//   const closeBtn = document.getElementById('close-menu');
-
-//   if (window.innerWidth < 992) {
-//     burger.addEventListener('click', () => {
-//       mobileMenu.classList.toggle('open');
-//       burger.classList.toggle('active');
-//     });
-
-//     closeBtn.addEventListener('click', () => {
+//     overlay?.addEventListener('click', () => {
 //       mobileMenu.classList.remove('open');
 //       burger.classList.remove('active');
 //     });
 
-//     const submenuParents = document.querySelectorAll('.mobile-nav .menu-item-has-children > a');
-//     submenuParents.forEach(link => {
-//       link.addEventListener('click', function (e) {
-//         const parent = this.parentElement;
-//         const submenu = parent.querySelector('.dropdown-menu, .dropdown-menu-sub');
-//         if (submenu) {
-//           e.preventDefault();
-//           parent.classList.toggle('active');
-//         }
-//       });
-//     });
 //   }
 // });
 
@@ -207,17 +131,41 @@ document.addEventListener('DOMContentLoaded', function () {
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobile-menu');
   const closeBtn = document.getElementById('close-menu');
+  const overlay = document.getElementById('menu-overlay');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    burger.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    burger.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  }
 
   if (window.innerWidth < 992) {
-    burger?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      burger.classList.toggle('active');
+    // Удалить data-bs-toggle у ссылок
+    document.querySelectorAll('.mobile-nav .dropdown-toggle').forEach(el => {
+      el.removeAttribute('data-bs-toggle');
     });
 
-    closeBtn?.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      burger.classList.remove('active');
+    // Удалить все style у вложенных подменю
+    document.querySelectorAll('.mobile-nav .dropdown-menu-sub').forEach(el => {
+      el.removeAttribute('style');
     });
+
+    burger?.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    closeBtn?.addEventListener('click', closeMenu);
+    overlay?.addEventListener('click', closeMenu);
 
     const submenuParents = document.querySelectorAll('.mobile-nav .menu-item-has-children > a');
     submenuParents.forEach(link => {
