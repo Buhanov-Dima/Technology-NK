@@ -12,6 +12,8 @@
 
 <body <?php body_class(); ?>>
 
+<div class="wrapper"> <!-- обертка для Flexbox -->
+
 <header class="header fixed-top">
 
     <div class="container d-flex justify-content-between align-items-center">
@@ -38,7 +40,10 @@
         ?>
       </nav>
 
-      <a class="nav-link d-none d-lg-block" href="tel:+79299011125">+7(929)-901-11-25</a>
+      <div class="btn-container">
+        <button class="btn btn-primary effect" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
+      </div>
+      <!-- <a class="nav-link d-none d-lg-block" href="tel:+79299011125">+7(929)-901-11-25</a> -->
 
       <div class="mobile-menu d-lg-none" id="mobile-menu">
         <div class="mobile-menu-inner">
@@ -50,7 +55,10 @@
             'walker' => new WP_Bootstrap_Navwalker(),
           ));
           ?>
-          <a class="nav-link mobile-phone" href="tel:+79299011125">+7(929)-901-11-25</a>
+          <!-- <a class="nav-link mobile-phone" href="tel:+79299011125">+7(929)-901-11-25</a> -->
+          <div class="btn-container">
+            <button class="btn btn-primary effect" data-bs-toggle="modal" data-bs-target="#contactModal">Связаться с нами</button>
+          </div>
         </div>
       </div>
       <div class="menu-overlay d-lg-none" id="menu-overlay"></div>

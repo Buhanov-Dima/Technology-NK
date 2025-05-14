@@ -39,8 +39,8 @@ $(document).ready(function () {
         loop: true,
         margin: 10,
         items: 5,
-        autoplay: true,
-        autoplayTimeout: 2500,
+        autoplay: false,
+        // autoplayTimeout: 2500,
         autoplayHoverPause: true,
         dots: false,
         nav: false,
@@ -62,6 +62,29 @@ $(document).ready(function () {
         }
 
     })
+
+    $('.product-carousel').owlCarousel({
+      loop: true,
+      margin: 0,
+      items: 5,
+      autoplay: false,
+      nav: true,
+      dots: false,
+      responsiveClass: true,
+      responsive:{
+          0:{
+              nav:true
+          },
+          600:{
+              nav:false
+          },
+          1000:{
+              nav:true,
+              loop:false
+          }
+      }
+
+  })
 	
 });
 
