@@ -570,7 +570,7 @@ a.nav-link:hover,
 }
 
 
-.form-control {
+/* .form-control {
   height: 52px !important;
   background: transparent !important;
   color: #9da1a5 !important;
@@ -579,7 +579,7 @@ a.nav-link:hover,
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
+} */
 
 .form-control {
   display: block;
@@ -722,122 +722,6 @@ input#toggle {
   z-index: 1000;
 }
 /*=============== Menu ===============*/
-
-/* Стили для модальной формы обратной связи */
-#contactModal .modal-content {
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  padding: 10px;
-}
-
-#contactModal .modal-header {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-#contactModal .modal-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-}
-
-#contactModal .modal-body {
-  padding-top: 0;
-}
-
-#contactModal .form-label {
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 6px;
-}
-
-#contactModal .form-control {
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-shadow: none;
-  transition: border-color 0.2s ease;
-}
-
-#contactModal .form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
-}
-
-#contactModal .modal-footer {
-  border-top: none;
-  padding-top: 0;
-}
-
-#contactModal .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-  border-radius: 8px;
-}
-
-#contactModal .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004ca1;
-}
-
-#contactModal .btn-secondary {
-  border-radius: 8px;
-}
-
-.child-pages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  margin-top: 2rem;
-}
-
-.child-page-card {
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease;
-}
-
-.child-page-card:hover {
-  transform: translateY(-4px);
-}
-
-.child-page-link {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-  height: 100%;
-}
-
-.child-page-thumbnail img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.child-page-content {
-  padding: 1rem;
-}
-
-.child-page-content h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.2rem;
-}
-
-.child-page-content p {
-  color: #555;
-  font-size: 0.95rem;
-}
-
-
-
-
-
-
-
-
 
 .container>.swiper-container{padding:20px 0; margin:0 auto;}
 .container>.swiper-container a{ position:relative; height:340px; overflow:hidden; display:block; background:url("../img/product-box-bg.png") no-repeat; background-position:50% 50%; background-size:100% 100%;} 
@@ -1953,3 +1837,188 @@ main {
   padding: 0!important;
   padding-right: 10px!important;
 }
+
+
+/* Стили для модальной формы обратной связи */
+/* Блюр и затемнение заднего фона модального окна */
+/* Модальное окно: больше блюра и затемнение */
+.modal-content {
+  background-color: rgba(255, 255, 255, 1); /* светлый с прозрачностью */
+  border-radius: 12px;
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); */
+  color: #000; /* базовый цвет текста */
+  /* Тонкий жёлтый бордер под фирменный цвет */
+  border: 1px solid rgba(237, 177, 23, 0.6);
+  /* Светлый стиль с внутренним свечением */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Поля ввода */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.9); /* белый, но немного прозрачный */
+  color: #000;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+/* При фокусе: подсветка работает */
+.form-control:focus {
+  border-color: rgba(237, 177, 23, 1.00);
+  box-shadow: 0 0 0 3px rgba(237, 177, 23, 0.3);
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+
+/* Метки */
+.form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Список файлов */
+#fileList ul {
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+
+#fileList li {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Кнопки */
+.modal-footer .btn-primary {
+  background-color: rgba(237, 177, 23, 1.00);
+  border: none;
+  color: #fff;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: rgba(200, 145, 18, 1.00);
+}
+
+.modal-footer .btn-secondary {
+  background-color: #e9ecef;
+  color: #333;
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #d6d8db;
+}
+
+/* Общая отступистость */
+.modal-body .mb-3 {
+  margin-bottom: 1.25rem !important;
+}
+
+
+/* #contactModal .modal-content {
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+}
+
+#contactModal .modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+#contactModal .modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+#contactModal .modal-body {
+  padding-top: 0;
+}
+
+#contactModal .form-label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+#contactModal .form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+#contactModal .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+}
+
+#contactModal .modal-footer {
+  border-top: none;
+  padding-top: 0;
+}
+
+#contactModal .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 8px;
+}
+
+#contactModal .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004ca1;
+}
+
+#contactModal .btn-secondary {
+  border-radius: 8px;
+}
+
+.child-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.child-page-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.child-page-card:hover {
+  transform: translateY(-4px);
+}
+
+.child-page-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.child-page-thumbnail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.child-page-content {
+  padding: 1rem;
+}
+
+.child-page-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.child-page-content p {
+  color: #555;
+  font-size: 0.95rem;
+} */

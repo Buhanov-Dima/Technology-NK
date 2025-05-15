@@ -71,40 +71,47 @@
     </div>
 
     <!-- Модальное окно -->
+    <!-- Модальное окно -->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-            <form id="contactForm" method="post">
-                <div class="modal-header">
-                <h5 class="modal-title">Связаться с нами</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                <div class="modal-body">
-                <div class="mb-3">
-                    <label for="name" class="form-label">ФИО</label>
-                    <input type="text" name="name" id="name" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Телефон</label>
-                    <input type="tel" name="phone" id="phone" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" id="email" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Вопрос</label>
-                    <textarea name="message" id="message" class="form-control" rows="4"></textarea>
-                </div>
-                </div>
-                <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Отправить</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                </div>
-            </form>
+                <form id="contactForm" method="post" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Связаться с нами</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">ФИО</label>
+                            <input type="text" name="name" id="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Телефон</label>
+                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="+7 111 111 11 11" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Вопрос</label>
+                            <textarea name="message" id="message" class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="attachments" class="form-label">Прикрепить файл(ы)</label>
+                            <input type="file" name="attachments[]" id="attachments" class="form-control" multiple>
+                            <div id="fileList" class="form-text mt-2"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+
 
     </div> <!-- .wrapper -->
 <?php wp_footer(); ?>
