@@ -10,6 +10,8 @@ get_header();
 		<div class="container">
 			<h2 class="mt-5 mb-3"><?php the_title(); ?></h2>
 
+			<?php the_content(); ?>
+
 			<div class="row gallery-grid">
 				<?php for ($i = 1; $i <= 10; $i++):
 					$image = get_field("image_$i");
@@ -39,7 +41,6 @@ get_header();
 
 		</div>
 	</div>
-
 </main>
 
 <?php get_footer(); ?>

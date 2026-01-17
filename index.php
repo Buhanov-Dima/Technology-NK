@@ -5,12 +5,9 @@
         <div class="container relative">
             <div>
                 <div class="main-text">
-                    <!-- <p>Электрощитовые решения для бизнеса и частного сектора!</p> -->
-                    <h1 class="mg-0">Производство электрощитового оборудования</h1>
-                    <ul class="mt-3">
-                        <li>Проектирование</li>
-                        <li>Производство</li>
-                        <li>Профессиональный монтаж</li>
+                    <h1 class="mg-0">Производство электрощитового оборудования в Перми</h1>
+                    <ul class="mt-3">                        
+                        <p>Компания "Технология-НК" занимается изготовлением электрощитового оборудования в Перми под ключ и предоставляет комплексные услуги по проектированию, автоматизации и монтажу.</p>
                     </ul>
                 </div>
                 <div class="d-flex blocks_wrap">
@@ -18,7 +15,7 @@
                     <div class="block-info blur-background">
                         <div class="wrap-block-info-title">
                             <div class="block-info-icon"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-1-colored.png" alt=""></div>
-                            <h3 class="block-info-title">Проектирование</h3>
+                            <p class="block-info-title">Проектирование</p>
                         </div>
                         <p class="block-info-text">Проектирование и разработка технической документации,
                             комплекта конструкторской документации.
@@ -30,12 +27,9 @@
                     <div class="block-info blur-background">
                         <div class="wrap-block-info-title">
                             <div class="block-info-icon "><img src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-2-colored.png" alt=""></div>
-                            <h3 class="block-info-title">Производство</h3>
+                            <p class="block-info-title">Производство</p>
                         </div>
-                        <p class="block-info-text">Большой опыт производства электрооборудования и выполнения
-                            электромонтажных
-                            работ с соблюдением всех технологических норм и требований.
-                        </p>
+                        <p class="block-info-text">Мы являемся прямым производителем металлических шкафов и блок-боксов, это позволяет нам гарантировать высокое качество продукции и короткие сроки поставки. </p>
                     </div>
                 </div>
                 
@@ -44,7 +38,7 @@
                     <div class="block-info blur-background">
                         <div class="wrap-block-info-title">
                             <div class="block-info-icon"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-3-colored.png" alt=""></div>
-                            <h3 class="block-info-title">Монтаж</h3>
+                            <p class="block-info-title">Монтаж</p>
                         </div>
                         <p class="block-info-text">Выполняем комплексные поставки электрооборудования на объекты нефтяных
                             месторождений, строительства
@@ -59,16 +53,15 @@
     </section>
 
 
-    <section>
-        <!-- <div class="page-wrapper d-flex flex-column min-vh-60 mb-5"> -->
-            <div class="container mt-5">
-                <h2 class="mt-5 mb-3">Продукция</h2>
+    <section class="mt-5">
+            <div class="container">
+                <h2 class="mb-3">Продукция</h2>
                 <div class="swiper-container swiper-container-horizontal">
                     <div class="swiper-wrapper product-carousel owl-carousel owl-theme" style="transform: translate3d(0px, 0px, 0px);">
 
                     <?php
                         // Укажи здесь ID нужных страниц
-                        $page_ids = array(80, 99, 84, 88, 170, 61); // Пример ID
+                        $page_ids = array(80, 99, 88, 170, 61, 84, 96); // Пример ID
 
                         foreach ( $page_ids as $page_id ) {
                             $page = get_post($page_id);
@@ -92,271 +85,89 @@
                             }
                         }
                     ?>
-
-                    <!-- <div class="swiper-slide" style="width: 260px;">
-                        <a href="/class/54/Low-Voltage-Electric.html">
-                        <div class="name">
-                            Low Voltage Electric
-                        </div>
-                        <div class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/content/gen-1.png" alt=""></div>
-                        </a>
-                    </div>
-                    
-                    <div class="swiper-slide" style="width: 260px;">
-                        <a href="class/55/High-Voltage-Electric.html">
-                        <div class="name">
-                            High Voltage Electric              </div>
-                        <div class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/content/gen-2.png" alt=""></div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide" style="width: 260px;">
-                        <a href="/class/54/Low-Voltage-Electric.html">
-                        <div class="name">
-                            Low Voltage Electric
-                        </div>
-                        <div class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/content/gen-1.png" alt=""></div>
-                        </a>
-                    </div>
-                    
-                    <div class="swiper-slide" style="width: 260px;">
-                        <a href="class/55/High-Voltage-Electric.html">
-                        <div class="name">
-                            High Voltage Electric              </div>
-                        <div class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/content/gen-2.png" alt=""></div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide" style="width: 260px;">
-                        <a href="/class/54/Low-Voltage-Electric.html">
-                        <div class="name">
-                            Low Voltage Electric
-                        </div>
-                        <div class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/content/gen-1.png" alt=""></div>
-                        </a>
-                    </div>
-                    
-                    <div class="swiper-slide" style="width: 260px;">
-                        <a href="class/55/High-Voltage-Electric.html">
-                        <div class="name">
-                            High Voltage Electric              </div>
-                        <div class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/content/gen-2.png" alt=""></div>
-                        </a>
-                    </div> -->
-                    
+                   
                     </div>
                 </div>
-                <!-- Add Pagination -->
-                <!-- <div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">3</span></div> -->
-                <!-- Add Arrows -->
                 <div class="button-next"></div>
                 <div class="button-prev swiper-button-disabled"></div>
-                
-                    </div>
-                <!-- </div> -->
-    </section>
-    
-    <!-- About Section -->
-    <!-- <section id="about" class="pt-45">
-
-        <div class="container">
-            <div class="about-wrap">
-                <h2>О компании</h2>
-                <div class="d-flex about-info">
-                    <div class="about-info-text">
-                        <p>
-                            <b>ООО "Технология-НК"</b> - завод, специализирующийся на разработке,
-                            изготовлении и поставке электрощитового оборудования любой
-                            сложности, имеем собственное производство металлических корпусов
-                            и щитов любой конструкции, изготавливаем климатические модульные
-                            здания.
-                        </p>
-                        <p>
-                            Наша компания <b>является сертифицированным производителем</b>
-                            низковольтного электрощитового оборудования. Вся наша проудкция
-                            имеет необходимые сертификаты и соответствует нормам технических
-                            и эксплуатационных требований, что гарантирует их безопасную и бесперебойную работу.
-                        </p>
-                        <p>
-                            <b>Предоставляем комплексные услуги по проектированию</b>,
-                            производству, а также по монтажу низковольтного электрощитового
-                            оборудования и щитового оборудования.
-                        </p>
-                        <p>
-                            <b>Проводим модернизацию электроустановок</b> зданий и различных
-                            промышленных объектов, осуществляем производство и поставку
-                            нестандартного электротехнического оборудования.
-                        </p>
-                        <p>ООО "Технология-НК" это качество, профессионализм и стабильность!</p>
-                    </div>
-                    <div class="about-info-img">
-                        <div class="owl-start owl-carousel owl-theme">
-                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/VRU/1.jpg" alt=""></div>
-                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/VRU/2.jpg" alt=""></div>
-                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/VRU/3.jpg" alt=""></div>
-                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/VRU/4.jpg" alt=""></div>
-                        </div>
-                    </div>
+                <div>
+                    <p>Мы специализируемся на производстве и имеем большой опыт:</p>
+                    <ul>
+                        <li>Распределительных щитов для промышленных объектов</li>
+                        <li>Шкафов автоматики и управления, ВРУ, НКУ, УКРМ и многих других</li>
+                        <li>Специальных электрощитов по индивидуальным проектам</li>
+                        <li>Металлических щитов и корпусов любых исполнений и степеней защиты</li>
+                        <li>Климатических блок-боксов</li>
+                    </ul>
                 </div>
             </div>
+    </section>
 
-
-        </div>
-    </section> -->
-
-    <!-- Portfolio Section -->
-    <section id="production" class="pt-45">
+    <section id="production" class="mt-5">
         <div class="container">
-            <h2 class="mb-4">Производство</h2>
+            <h2 class="mb-4">Полный цикл производства электрощитов</h2>
             <div class="production-text">
-                <!-- <p>
-                    Собственное производство металлических корпусов и щитов любой конструкции и степени сложности с применением лазерной резки, гибки, гравировки и покраски, а также нанесением пенополиуретанового уплотнителя по технологии гаскейтинг (Gasketing).
-                    В  соответствии с требованиями ГОСТ и СНиП. Предоставляем квалифицированную помощь по подбору продукции с учетом области использования.
-                </p>
+                <p>Процесс изготовления начинается с тщательного проектирования, при котором учитываются все технические требования заказчика. </p>
+                    <p>Наши инженеры профессионально выполняют необходимые расчёты и подбирают необходимые комплектующие для сборки, которые в свою очередь, мы используем только у проверенных производителей и опираемся на свой многолетний опыт. </p>
+                    <p>Сборка на нашем заводе осуществляется квалифицированными специалистами с соблюдением всех норм ГОСТ и ПУЭ.</p></p>
+                <p>Наш завод оснащён современным оборудованием для металлообработки, точной сборки металлических шкафов и щитов управления.</p>
 
-                <p>
-                    Технология-НК является производителем электрощитового оборудования для
-                    промышленных, сельскохозяйственных и непроизводственных объектов, жилых и административных зданий
-                </p>
-            
-                <p>
-                    Собственное производство металлических корпусов и щитов любой конструкции и степени сложности с применением лазерной резки, гибки, гравировки и покраски, а также нанесением пенополиуретанового уплотнителя по технологии гаскейтинг (Gasketing)
-                    Изготавливаем блок-контейнеры и модульные здания под ключ с электротехническим оборудованием, необходимыми коммуникациями, разных размеров и типов из усиленного каркаса, огнестойких и пожаробезопасных сендвич-панелей, соответствующих ГОСТ и СНиП
-                </p> -->
 
-                <p>Технология-НК является производителем электрощитового оборудования для
-                промышленных, сельскохозяйственных и непроизводственных объектов, жилых и административных зданий
-</p>
-<p>
-                Собственное производство металлических корпусов и щитов любой конструкции и степени сложности с применением лазерной резки, гибки, гравировки и покраски, а также нанесением пенополиуретанового уплотнителя по технологии гаскейтинг (Gasketing)
-</p>
-<p>
-                Изготавливаем блок-контейнеры и модульные здания под ключ с электротехническим оборудованием, необходимыми коммуникациями, разных размеров и типов из усиленного каркаса, огнестойких и пожаробезопасных сендвич-панелей, соответствующих ГОСТ и СНиП
-</p>
-
-                <!-- <p>Собственное производство металлических корпусов и щитов любой конструкции и степени сложности с
-                    применением
-                    лазерной резки, гибки, гравировки и покраски.
-                </p>
-                <p>
-                    Изготавливаем: электротехнические боксы, стоечные и приборные корпуса, корпуса для блоков питания.
-                </p>
-                <p>В соответствии с требованиями ГОСТ и СНиП. Предоставляем квалифицированную помощь по подбору
-                    продукции с учетом
-                    области использования.
-                </p> -->
             </div>
 
             <div class="d-flex d-wrap portfolio-gallery">
                 <div class="production-carousel owl-carousel owl-theme">
-                    <div class="wrap-gallery-slide item">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/1.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/1.jpg">
-                        </a>
-                    </div>
-    
-                    <div class="wrap-gallery-slide item">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/2.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/2.jpg">
-                        </a>
-                    </div>
-    
-                    <div class="wrap-gallery-slide item">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/3.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/3.jpg">
-                        </a>
-                    </div>
-    
-                    <div class="wrap-gallery-slide">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/4.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/4.jpg">
-                        </a>
-                    </div>
-    
-                    <div class="wrap-gallery-slide">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/5.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/5.jpg">
-                        </a>
-                    </div>
-    
-                    <div class="wrap-gallery-slide">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/8.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/6.jpg">
-                        </a>
-                    </div>
-    
-                    <div class="wrap-gallery-slide">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/7.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/7.jpg">
-                        </a>
-                    </div>
-    
-                    <div class="wrap-gallery-slide">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/8.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/8.jpg">
-                        </a>
-                    </div>
-    
-                    <div class="wrap-gallery-slide">
-                        <a data-fancybox="gallery" href="<?php echo get_template_directory_uri(); ?>/img/content/products/9.jpg">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/content/products/9.jpg">
-                        </a>
-                    </div>
+                    <?php for ($i = 1; $i <= 10; $i++): 
+                        $image = get_field("image_$i", 20);
+                        if ($image): ?>
+                            <div class="wrap-gallery-slide item">
+                                <a data-fancybox="gallery" href="<?php echo esc_url($image['url']); ?>">
+                                    <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                                </a>
+                            </div>
+                    <?php endif; endfor; ?>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- <section id="blocks">
-        <div class="container mt-5">
-            <div class="d-flex blocks_wrap">
-                <div class="wrap-block-info">
-                    <div class="wrap-block-info-title">
-                        <div class="block-info-icon"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-1.png" alt=""></div>
-                        <h3 class="block-info-title">Проектирование</h3>
-                    </div>
-                    <div class="block-info">
-                        <p class="block-info-text">Проектирование и разработка технической документации,
-                            комплекта конструкторской документации.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="wrap-block-info">
-                    <div class="wrap-block-info-title">
-                        <div class="block-info-icon"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-2.png" alt=""></div>
-                        <h3 class="block-info-title">Производство</h3>
-                    </div>
-                    
-                    <div class="block-info">
-                        <p class="block-info-text">Большой опыт производства электрооборудования и выполнения
-                            электромонтажных
-                            работ с соблюдением всех технологических норм и требований.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="wrap-block-info">
-                    <div class="wrap-block-info-title">
-                        <div class="block-info-icon"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-3.png" alt=""></div>
-                        <h3 class="block-info-title">Монтаж</h3>
-                    </div>
-                    <div class="block-info">
-                        <p class="block-info-text">Выполняем комплексные поставки электрооборудования на объекты нефтяных
-                            месторождений, строительства
-                            и электрификации.
-                        </p>
-                    </div>
-                </div>
-                
+    <section class="mt-5">
+        <div class="container">
+            <h2 class="mb-4">Преимущества работы с нами</h2>
+            <div class="production-text">
+                <p>Мы, как завод - изготовитель предлагаем:</p>
+                <ul>
+                    <li>Профессиональный расчет и разработку проектов любой сложности</li>
+                    <li>Контроль качества на всех этапах изготовления</li>
+                    <li>Использование оптимальных и надежных комплектующих</li>
+                    <li>Точное соблюдение сроков поставки</li>
+                    <li>Гарантию на все виды продукции</li>
+                </ul>
             </div>
         </div>
-    </section> -->
-    
-<!-- Call to Action Section -->
-    <section id="partners">
+    </section>
+
+    <section class="mt-5">
         <div class="container">
-            <h2 class="mt-5 mb-4">Партнеры</h2>
+            <h2 class="mb-4">Как заказать электрощитовое оборудование?</h2>
+            <div class="production-text">
+                <p>
+                    Для расчёта стоимости изготовления электрощитов и другого оборудования, высылайте нам техническое задание или описание требований, после чего наши специалисты сделают все необходимые расчёты, подберут нужное оборудование, спроектируют и составят необходимую документацию, вы получите на согласование коммерческое предложение.
+                </p>
+                <p>
+                    Компания "Технология НК" осуществляет поставку электрощитового оборудования по Перми и Пермскому краю, а также всей России.
+                </p>
+                <p>
+                    Мы готовы разработать и изготовить электрощиты любой сложности с учетом ваших требований.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section id="partners" class="mt-5">
+        <div class="container">
+            <h2 class="mb-4">Партнеры</h2>
             <div>
                 <div class="partners-items">
                     <div class="partners-carousel owl-carousel owl-theme d-flex">
@@ -376,9 +187,9 @@
         </div>
     </section>
 
-	<section class="ftco-section contact-section pt-5 pb-5" id="contact">
+	<section class="ftco-section contact-section pb-5 mt-5" id="contact">
         <div class="container">
-            <h2 class="mt-5 mb-4">Наши контакты</h2>
+            <h2 class="mb-4">Наши контакты</h2>
 
             <div class="row block-contacts">
                 <div class="col-md-6">
@@ -389,12 +200,8 @@
                             </div>
                             <div>
                                 <div>
-                                    Телефон для связи:</br> +7 (342) 203-90-33, +7 (929) 901-11-25
+                                    Телефон для связи:</br> +7 (342) 203-13-18
                                 </div>
-                                <!-- <div>
-                                    E-mail:
-                                    tehnologynk@mail.ru
-                                </div> -->
                             </div>
                         </div>
                         <div class="block-contacts-div">
@@ -403,12 +210,8 @@
                             </div>
                             <div>
                                     E-mail:
-                                    tehnologynk@mail.ru
+                                    tech@technology-nk.ru
                                 </div>
-                            <!-- <div>
-                                <div>Бухгалтерия</div>
-                                <div>E-mail:buh@technology-nk.ru</div>
-                            </div> -->
                         </div>
                         <div class="block-contacts-div">
                             <div>
@@ -422,7 +225,7 @@
                             </div>                            
                         </div>
                         <div class="w-100 btn-container">
-                            <button class="btn btn-primary effect">Оставить заявку</button>
+                            <button class="btn btn-primary effect" data-bs-toggle="modal" data-bs-target="#contactModal">Оставить заявку</button>
                         </div>
                     </div>
                 </div>
@@ -437,8 +240,5 @@
             </div>
         </div>
     </section>
-
-
-    
 
 <?php get_footer(); ?>

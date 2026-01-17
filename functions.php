@@ -23,6 +23,7 @@ function ng_theme_scripts() {
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array('jquery'), null, true);
     wp_enqueue_script('fancybox', get_template_directory_uri() . '/js/jquery.fancybox.min.js', array('jquery'), null, true);
     wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), null, true);
+    wp_enqueue_script('imask', get_template_directory_uri() . '/js/imask.js', array(), null, true);
     wp_enqueue_script('ng-main', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'ng_theme_scripts');
@@ -49,5 +50,50 @@ add_action('wp_head', function () {
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails', array('post', 'page'));
 
+
+add_action('init', 'handle_modal_contact_form');
+function handle_modal_contact_form() {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name']) && isset($_POST['phone'])) {
+
+        $name    = sanitize_text_field($_POST['name']);
+        $phone   = sanitize_text_field($_POST['phone']);
+        $email   = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+        $message = isset($_POST['message']) ? sanitize_textarea_field($_POST['message']) : '';
+
+	//$to = get_option('admin_email');
+	    $to = 'cemga91@gmail.com';
+        $subject = "Новое сообщение с сайта";
+        $body = "Имя: $name\nТелефон: $phone\nEmail: $email\nСообщение:\n$message";
+
+        $headers = array('Content-Type: text/plain; charset=UTF-8');
+        if ($email) {
+            $headers[] = 'Reply-To: ' . $email;
+        }
+
+        // Обработка файлов
+        $attachments = array();
+        if (!empty($_FILES['attachments']['name'][0])) {
+            foreach ($_FILES['attachments']['tmp_name'] as $key => $tmp_name) {
+                if (is_uploaded_file($tmp_name)) {
+                    $upload = wp_upload_bits($_FILES['attachments']['name'][$key], null, file_get_contents($tmp_name));
+                    if (!$upload['error']) {
+                        $attachments[] = $upload['file'];
+                    }
+                }
+            }
+        }
+
+        // Отправка письма
+        $mail_sent = wp_mail($to, $subject, $body, $headers, $attachments);
+
+        if ($mail_sent) {
+            wp_redirect(add_query_arg('contact_sent', '1', $_SERVER['HTTP_REFERER']));
+            exit;
+        } else {
+            wp_redirect(add_query_arg('contact_sent', '0', $_SERVER['HTTP_REFERER']));
+            exit;
+        }
+    }
+}
 
 ?>

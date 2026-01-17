@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Компания
+Template Name: Галлеря - справа
 */
 get_header();
 ?>
@@ -9,11 +9,12 @@ get_header();
     <div class="page-wrapper d-flex flex-column min-vh-60 mb-5">
 		<div class="container mt-5">
 			<h2 class="mt-5 mb-3"><?php the_title(); ?></h2>
-			<?php the_content(); ?>
+			
 			
 			<div class="d-flex about-info">
                     <div class="about-info-text">
-                        <p>
+                        <?php the_content(); ?>
+                        <!-- <p>
                             <b>ООО "Технология-НК"</b> - завод, специализирующийся на разработке,
                             изготовлении и поставке электрощитового оборудования любой
                             сложности, имеем собственное производство металлических корпусов
@@ -36,13 +37,14 @@ get_header();
                             промышленных объектов, осуществляем производство и поставку
                             нестандартного электротехнического оборудования.
                         </p>
-                        <p>ООО "Технология-НК" это качество, профессионализм и стабильность!</p>
+                        <p>ООО "Технология-НК" это качество, профессионализм и стабильность!</p> -->
                     </div>
                     <div class="about-info-img">
                         <div class="owl-start owl-carousel owl-theme">
-                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/company/1.png" alt=""></div>
-                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/company/2.jpg" alt=""></div>
-                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/company/3.jpg" alt=""></div>
+                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/VRU/1.jpg" alt=""></div>
+                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/VRU/2.jpg" alt=""></div>
+                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/VRU/3.jpg" alt=""></div>
+                            <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/content/VRU/4.jpg" alt=""></div>
                         </div>
                     </div>
                 </div>

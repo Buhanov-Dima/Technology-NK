@@ -19,12 +19,8 @@ get_header();
                             </div>
                             <div>
                                 <div>
-                                    Телефон для связи:</br> +7 (342) 203-90-33, +7 (929) 901-11-25
+                                    Телефон для связи:</br> +7 (342) 203-13-18
                                 </div>
-                                <!-- <div>
-                                    E-mail:
-                                    tehnologynk@mail.ru
-                                </div> -->
                             </div>
                         </div>
                         <div class="block-contacts-div">
@@ -33,12 +29,8 @@ get_header();
                             </div>
                             <div>
                                     E-mail:
-                                    tehnologynk@mail.ru
+                                    tech@technology-nk.ru
                                 </div>
-                            <!-- <div>
-                                <div>Бухгалтерия</div>
-                                <div>E-mail:buh@technology-nk.ru</div>
-                            </div> -->
                         </div>
                         <div class="block-contacts-div">
                             <div>
@@ -52,7 +44,7 @@ get_header();
                             </div>                            
                         </div>
                         <div class="w-100 btn-container">
-                            <button class="btn btn-primary effect">Оставить заявку</button>
+                            <button class="btn btn-primary effect" data-bs-toggle="modal" data-bs-target="#contactModal">Оставить заявку</button>
                         </div>
                     </div>
                 </div>
